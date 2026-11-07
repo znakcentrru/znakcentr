@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заявка — Знакцентр</title>
+<meta name="theme-color" content="#1f2326">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231f2326'/><rect x='18' y='44' width='64' height='12' fill='%23ffc61a'/></svg>">
+<style>
+  @font-face{font-family:"Golos Text";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/golos-text-cyrillic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Golos Text";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/golos-text-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Roboto Condensed";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/roboto-condensed-cyrillic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  :root{--graphite:#1f2326;--graphite-2:#2b3035;--paper:#f6f6f3;--signal:#ffc61a;--muted:#5d646b;--error:#b42318}
+  *{box-sizing:border-box}
+  body{margin:0;padding:32px 16px;font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.5;color:var(--graphite);background:var(--paper)}
+  .box{width:min(560px,100%);margin-inline:auto}
+  h1{margin:0 0 8px;font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;font-size:44px;line-height:1.05;font-weight:800}
+  .lead{margin:0 0 22px;color:var(--muted);font-size:16px}
+  a{color:inherit}
+  a[href^="tel:"]{white-space:nowrap}
+  form{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+  .field{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;min-width:0}
+  .field>label{font-size:15px;font-weight:500}
+  .req{color:var(--error)}
+  input,textarea,select{font:inherit;font-size:16px;padding:12px 14px;border:2px solid var(--graphite);background:#fff;color:var(--graphite);border-radius:0;width:100%;display:block;min-width:0;min-height:50px;-webkit-appearance:none;appearance:none}
+  input:focus,textarea:focus,select:focus{outline:0;box-shadow:0 0 0 3px var(--signal)}
+  [aria-invalid="true"]{border-color:var(--error)!important;background-color:#fff7f6!important}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--graphite) 50%),linear-gradient(135deg,var(--graphite) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:36px}
+  textarea{min-height:110px;resize:vertical}
+  .err{color:var(--error);font-size:14px;font-weight:500}
+  .err:empty{display:none}
+  .consent{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:14px;cursor:pointer}
+  .consent input{width:22px;height:22px;min-height:0;padding:0;margin:2px 0 0;-webkit-appearance:checkbox;appearance:checkbox;accent-color:var(--graphite);cursor:pointer}
+  :focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+  .btn{display:inline-block;padding:14px 24px;background:var(--graphite);color:#fff;text-decoration:none;font:inherit;font-weight:600;border:0;cursor:pointer;transition:background .2s,box-shadow .2s}
+  .btn:hover{background:var(--graphite-2);box-shadow:6px 6px 0 var(--signal)}
+  .btn:disabled{opacity:.6;cursor:default;box-shadow:none}
+  .msg{min-height:1.5em;font-weight:600;margin:0}
+  .msg.bad{color:var(--error)}
+  .back{margin:28px 0 0;font-size:15px}
+  .policy{margin:16px 0 0;font-size:14px;color:var(--muted)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!--
+  Отдельная страница с формой заявки «Знакцентр» (основная форма — на главной странице).
+  Заявки уходят на почту через сервис FormSubmit (адрес указан в атрибуте action).
+  После отправки FormSubmit открывает страницу spasibo.html.
+  Отправка работает только на сайте в интернете, при открытии файла с компьютера она не сработает.
+-->
+
+<main class="box">
+  <h1>Заявка</h1>
+  <p class="lead">Заполните форму — ответим в течение рабочего дня. Или позвоните: <a href="tel:+73422934502">+7 (342) 293-45-02</a>.</p>
+  <form id="lead-form" action="https://formsubmit.co/b7fa9c365df3d6da201135b7abc57044" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Новая заявка с сайта Знакцентр">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://znakcentrru.github.io/znakcentr/spasibo.html">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="field">
+      <label for="f-name">Ваше имя <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-name" name="Имя" type="text" required autocomplete="name" maxlength="80" aria-describedby="err-name">
+      <span class="err" id="err-name"></span>
+    </div>
+    <div class="field">
+      <label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+      <input id="f-phone" name="Телефон" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+7 (912) 345-67-89" aria-describedby="err-phone">
+      <span class="err" id="err-phone"></span>
+    </div>
+    <div class="field">
+      <label for="f-item">Что нужно изготовить <span class="req" aria-hidden="true">*</span></label>
+      <select id="f-item" name="Что изготовить" required aria-describedby="err-item">
+        <option value="">Выберите</option>
+        <option>Баннер</option>
+        <option>Вывеска</option>
+        <option>Дорожный знак</option>
+        <option>План эвакуации</option>
+        <option>Знаки пожарной безопасности</option>
+        <option>Алюминиевый профиль</option>
+        <option>Другое</option>
+      </select>
+      <span class="err" id="err-item"></span>
+    </div>
+    <div class="field">
+      <label for="f-date">Желаемый срок выполнения</label>
+      <input id="f-date" name="Желаемый срок" type="date">
+    </div>
+    <div class="field">
+      <label for="f-comment">Комментарий</label>
+      <textarea id="f-comment" name="Комментарий" maxlength="1500" placeholder="Размеры, количество, адрес монтажа, сроки"></textarea>
+    </div>
+    <label class="consent"><input type="checkbox" name="Согласие на обработку данных" value="Да" required aria-describedby="err-consent"><span>Даю согласие на обработку персональных данных для ответа на заявку (<a href="soglasie.html" target="_blank" rel="noopener">текст согласия</a>) <span class="req" aria-hidden="true">*</span></span></label>
+    <span class="err" id="err-consent"></span>
+
+    <div><button class="btn" type="submit">Отправить заявку</button></div>
+    <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+  </form>
+  <p class="policy">Данные нужны только для ответа на заявку. <a href="politika.html" target="_blank" rel="noopener">Политика обработки персональных данных</a></p>
+  <p class="back"><a href="./">← На главную страницу сайта</a></p>
+</main>
+
+<script>
+  const form = document.getElementById('lead-form');
+  const msg = document.getElementById('form-msg');
+  const sendBtn = form.querySelector('button[type="submit"]');
+  const F = {
+    name: form.elements['Имя'],
+    phone: form.elements['Телефон'],
+    item: form.elements['Что изготовить'],
+    consent: form.elements['Согласие на обработку данных']
+  };
+  let sending = false;
+
+  function setErr(key, text) {
+    document.getElementById('err-' + key).textContent = text || '';
+    if (text) F[key].setAttribute('aria-invalid', 'true'); else F[key].removeAttribute('aria-invalid');
+  }
+  function phoneOk(v) {
+    const d = String(v).replace(/\D/g, '');
+    return d.length === 10 || (d.length === 11 && (d[0] === '7' || d[0] === '8'));
+  }
+
+  const today = new Date();
+  form.elements['Желаемый срок'].min = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+
+  F.name.addEventListener('input', () => { if (F.name.value.trim()) setErr('name'); });
+  F.phone.addEventListener('input', () => { if (phoneOk(F.phone.value)) setErr('phone'); });
+  F.item.addEventListener('change', () => { if (F.item.value) setErr('item'); });
+  F.consent.addEventListener('change', () => { if (F.consent.checked) setErr('consent'); });
+
+  window.addEventListener('pageshow', () => {
+    if (!sending) return;
+    sending = false; sendBtn.disabled = false; sendBtn.textContent = 'Отправить заявку'; msg.textContent = '';
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (sending) return;
+    const errors = [
+      ['name', F.name.value.trim() ? '' : 'Укажите имя.'],
+      ['phone', phoneOk(F.phone.value) ? '' : 'Укажите телефон полностью, например +7 (912) 345-67-89.'],
+      ['item', F.item.value ? '' : 'Выберите, что нужно изготовить.'],
+      ['consent', F.consent.checked ? '' : 'Отметьте согласие на обработку персональных данных.']
+    ];
+    let first = null;
+    errors.forEach(([key, text]) => { setErr(key, text); if (text && !first) first = F[key]; });
+    if (first) { first.focus(); msg.className = 'msg bad'; msg.textContent = 'Проверьте отмеченные поля.'; return; }
+    if (navigator.onLine === false) { msg.className = 'msg bad'; msg.textContent = 'Нет подключения к интернету. Попробуйте ещё раз, когда связь появится, или позвоните нам.'; return; }
+    if (/^https?:$/.test(location.protocol)) form.elements['_next'].value = new URL('spasibo.html', location.href).href;
+    msg.className = 'msg'; msg.textContent = 'Отправляем заявку…';
+    sendBtn.disabled = true; sendBtn.textContent = 'Отправляем…'; sending = true;
+    HTMLFormElement.prototype.submit.call(form);
+  });
+</script>
+</body>
+</html>
